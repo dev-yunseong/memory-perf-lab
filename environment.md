@@ -1,13 +1,13 @@
 # 측정 환경
 
 - Intel(R) N100, core 4
-- L1d 코어당 32KB, L1d 코어당 64KB, L2 2MB (공유), L3 6MB (공유) 
+- L1d 코어당 32KB, L1d 코어당 64KB, L2 2MB (공유), L3 6MB (공유)
 - 주파수 400MHz-3400MHz
 
 ## 예상
+
 - 32KB 이하를 사용할 때는 L1d를 사용할 것이기에 매우 빠를 것
 - 그 후 2MB, 6MB에 따라 느려질 것
-
 
 ## 명령어
 
@@ -43,7 +43,6 @@ NUMA:
   NUMA node0 CPU(s):         0-3
 ```
 
-
 ```bash
 $ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # cpu 주파수 정책
 ─────┬───────────────────────────────────────────────────────────────────────
@@ -68,3 +67,4 @@ $ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # cpu 주파수 정�
 ─────┴───────────────────────────────────────────────────────────────────────
 
 ```
+
