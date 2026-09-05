@@ -20,7 +20,7 @@ Intel(R) N100 (core 4), L1d 코어당 32KB, L2 2MB 공유, L3 6MB 공유.
 
 ## 메모리 실험 결과
 
-[실험 결과 csv](./results/median-service-off.csv)
+[실험 결과 csv](./results/median-service-on.csv)
 
 각 크기당 5번 반복 층정했을 때의 중간값
 
@@ -133,6 +133,6 @@ latency: 120.154 ns
 
 | 파일 | 내용 |
 | --- | --- |
-| [`results/sweep-service-off.csv`](./results/sweep-service-off.csv) | 4KB~64MB, 크기당 5회 raw 측정값 |
-| [`results/median-service-off.csv`](./results/median-service-off.csv) | 크기별 중간값 |
+| [`results/sweep-service-on.csv`](./results/sweep-service-on.csv) | 4KB~64MB, 크기당 5회 raw 측정값 |
+| [`results/median-service-on.csv`](./results/median-service-on.csv) | 크기별 중간값 |
 | [`results/perf-counters.txt`](./results/perf-counters.txt) | `perf stat` PMU counter 원본 출력 |
