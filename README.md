@@ -18,7 +18,6 @@ gcc -O2 -o latency latency.c   # 빌드
 Intel(R) N100 (core 4), L1d 코어당 32KB, L2 2MB 공유, L3 6MB 공유.
 자세한 사양과 `lscpu` / `scaling_governor` 출력은 [environment.md](./environment.md)에 정리했다.
 
-
 ## 주파수 고정
 
 처음 잰 결과는 계단이 울퉁불퉁했다.
@@ -83,7 +82,7 @@ ns 자체는 앞의 측정보다 4배쯤 크다. 800MHz에서는 clock 하나가
 
 [실험 결과 csv](./results/median-service-on.csv)
 
-각 크기당 5번 반복 층정했을 때의 중간값
+각 크기당 5번 반복 측정했을 때의 중간값
 
 ```
 4KB:    1.778ns
@@ -108,7 +107,7 @@ ns 자체는 앞의 측정보다 4배쯤 크다. 800MHz에서는 clock 하나가
 L1d는   약 1.7ns
 L2는    약 6.8ns
 L3는    약 25.7ns
-DRAM은  약 130.4ns인것을 볼 수 있다.
+DRAM은  약 130.4ns인 것을 볼 수 있다.
 
 하지만 각 접근할 크기를 늘린다고 해서 모든 요청이 L1 cache에 가거나 DRAM에 가는 것이 아니기에 계단이 깔끔하게 보이지는 않았다.
 
@@ -119,7 +118,7 @@ DRAM은  약 130.4ns인것을 볼 수 있다.
 16KB, 1MB, 4MB, 32MB에서 측정을 진행했다.
 L1-dcache-misses를 지원하지 않아서 L1에서의 cache miss를 정확히 알 수 없었다.
 
-[cache-reference, cache-misses 관련 글](https://stackoverflow.com/questions/55035313/how-does-linux-perf-calculate-the-cache-references-and-cache-misses-events)에서 볼 수 있듯 cache-reference, cache-misses는 LLC 즉 L3 cache관련 통계이다. cache-reference는 loads, stores를 포함한 L3 cache에 접근한 횟수이다.
+[cache-reference, cache-misses 관련 글](https://stackoverflow.com/questions/55035313/how-does-linux-perf-calculate-the-cache-references-and-cache-misses-events)에서 볼 수 있듯 cache-reference, cache-misses는 LLC 즉 L3 cache 관련 통계이다. cache-reference는 loads, stores를 포함한 L3 cache에 접근한 횟수이다.
 
 또한 [mem-load 관련 글](https://stackoverflow.com/questions/44466697/perf-stat-does-not-count-memory-loads-but-counts-memory-stores)에서 볼 수 있는 mem-loads가 0으로 고정되는 것은 intel cpu의 모니터링 방식의 문제이다.
 
@@ -146,7 +145,7 @@ done 2>&1 | tee results/perf-counters.txt
 
 ### 결과
 
-접근하는 크기가 커질 수록 L1 -> L2 -> L3 -> DRAM까지 내려가는 것을 확인할 수 있다.
+접근하는 크기가 커질수록 L1 -> L2 -> L3 -> DRAM까지 내려가는 것을 확인할 수 있다.
 
 ```
 16KB
