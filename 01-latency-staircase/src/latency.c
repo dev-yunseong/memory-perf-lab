@@ -34,8 +34,8 @@ int main(int argc, char ** argv) {
 	// 랜덤하게 perm 배열의 수를 섞는다.
 	srand(42);
 	for (size_t i = nslots - 1; i > 0; i--) {
-		size_t j = (size_t)((double)rand() / (double)RAND_MAX + 1.0) * (double)(i + 1);
-		size_t t = perm[i]; perm[i] = perm[i]; perm[j] = t;
+		size_t j = (size_t)((double)rand() / ((double)RAND_MAX + 1.0) * (double)(i + 1));
+		size_t t = perm[i]; perm[i] = perm[j]; perm[j] = t;
 	}
 
 	// buf에 perm 값을 저장한다.
@@ -46,7 +46,7 @@ int main(int argc, char ** argv) {
     	size_t idx = 0;
     	for (size_t r = 0; r < 2; r++)
         	for (size_t i = 0; i < nslots; i++)
-            	idx = *(size_t *)(buf + idx * LINE);
+            		idx = *(size_t *)(buf + idx * LINE);
 
 	// iters 만큼 cache를 순회하는 시간을 잰다.
     	double t0 = now_ns();
