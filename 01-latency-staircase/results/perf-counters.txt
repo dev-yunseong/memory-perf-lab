@@ -1,0 +1,80 @@
+=== 16384 bytes ===
+sink=0
+16384,2.053
+
+ Performance counter stats for 'taskset -c 3 ./latency 16384 20000000':
+
+       121,776,787      mem_load_uops_retired.l1_hit:u                                          (85.79%)
+            13,225      mem_load_uops_retired.l1_miss:u                                         (85.70%)
+             8,109      mem_load_uops_retired.l2_hit:u                                          (85.69%)
+               605      mem_load_uops_retired.l2_miss:u                                         (85.69%)
+               388      mem_load_uops_retired.l3_hit:u                                          (85.69%)
+               192      mem_load_uops_retired_misc.l3_miss:u                                        (85.69%)
+               165      mem_load_uops_retired.dram_hit:u                                        (85.75%)
+
+       0.042571809 seconds time elapsed
+
+       0.041549000 seconds user
+       0.001013000 seconds sys
+
+
+=== 1048576 bytes ===
+sink=3491
+1048576,9.522
+
+ Performance counter stats for 'taskset -c 3 ./latency 1048576 20000000':
+
+       100,568,120      mem_load_uops_retired.l1_hit:u                                          (85.45%)
+        20,035,090      mem_load_uops_retired.l1_miss:u                                         (85.44%)
+        19,556,488      mem_load_uops_retired.l2_hit:u                                          (85.53%)
+           360,230      mem_load_uops_retired.l2_miss:u                                         (85.96%)
+           331,248      mem_load_uops_retired.l3_hit:u                                          (85.96%)
+             7,977      mem_load_uops_retired_misc.l3_miss:u                                        (85.96%)
+             6,441      mem_load_uops_retired.dram_hit:u                                        (85.70%)
+
+       0.192914228 seconds time elapsed
+
+       0.192870000 seconds user
+       0.000000000 seconds sys
+
+
+=== 4194304 bytes ===
+sink=24257
+4194304,24.180
+
+ Performance counter stats for 'taskset -c 3 ./latency 4194304 20000000':
+
+       103,455,530      mem_load_uops_retired.l1_hit:u                                          (85.64%)
+        20,162,406      mem_load_uops_retired.l1_miss:u                                         (85.74%)
+         3,428,994      mem_load_uops_retired.l2_hit:u                                          (85.74%)
+        16,837,235      mem_load_uops_retired.l2_miss:u                                         (85.73%)
+        15,933,822      mem_load_uops_retired.l3_hit:u                                          (85.74%)
+           835,543      mem_load_uops_retired_misc.l3_miss:u                                        (85.74%)
+           837,751      mem_load_uops_retired.dram_hit:u                                        (85.68%)
+
+       0.491300021 seconds time elapsed
+
+       0.489226000 seconds user
+       0.002000000 seconds sys
+
+
+=== 33554432 bytes ===
+sink=343787
+33554432,120.154
+
+ Performance counter stats for 'taskset -c 3 ./latency 33554432 20000000':
+
+       131,973,941      mem_load_uops_retired.l1_hit:u                                          (85.69%)
+        21,880,422      mem_load_uops_retired.l1_miss:u                                         (85.71%)
+           994,816      mem_load_uops_retired.l2_hit:u                                          (85.72%)
+        20,507,724      mem_load_uops_retired.l2_miss:u                                         (85.73%)
+         2,887,535      mem_load_uops_retired.l3_hit:u                                          (85.72%)
+        17,595,779      mem_load_uops_retired_misc.l3_miss:u                                        (85.72%)
+        17,603,270      mem_load_uops_retired.dram_hit:u                                        (85.71%)
+
+       2.571427398 seconds time elapsed
+
+       2.554798000 seconds user
+       0.015998000 seconds sys
+
+
